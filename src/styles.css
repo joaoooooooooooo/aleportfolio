@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "bold";
+  src: url(fonts/PPNeueMachina-InktrapUltrabold.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "reg";
+  src: url(fonts/PPNeueMachina-InktrapRegular.otf);
+  font-weight: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,4 +25,63 @@ body,
 
 body {
   background: #dddddd;
+}
+
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: .1;
+  z-index: 1000;
+  pointer-events: none;
+  background: url(noise.gif);
+}
+
+.nav-wrapper {
+  width: 100%;
+  height: 5vh;
+
+
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hover-this {
+  transition: all .3s ease;
+}
+
+span {
+  display: inline-block;
+  font-family: "reg";
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: transform .1s linear;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: .3rem;
+  background: rgb(255, 0, 0);
+  border-radius: 50%;
+  mix-blend-mode: none;
+  transition: transform .3s ease;
+}
+
+.hover-this:hover~.cursor {
+  transform: translate(-50%, -50%) scale(8);
 }
